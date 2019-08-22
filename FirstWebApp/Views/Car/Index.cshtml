@@ -47,15 +47,17 @@
 
 
 <script>
-
     $(document).ready(function () {
         $.ajax({
             url: '/Car/Temp',
             type: 'GET',
+            dataType: 'json',
             success: function (data) {
                 console.log(data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
             }
         });
     });
-
 </script>

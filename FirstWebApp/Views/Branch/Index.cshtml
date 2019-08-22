@@ -1,0 +1,44 @@
+﻿@model List<DAL.Moldels.Branch>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Branch</th>
+            <th>Manager</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var branch in Model)
+        {
+
+            <tr>
+                <td>
+                    @branch.Name
+                </td>
+                <td>
+                    @branch.Manager
+                </td>
+                
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Branch", new { @branchId = branch.Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Branch", new { @branchId = branch.Id }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+<br />
+
+
+@Html.ActionLink("Add Branch", "Create", "Branch", new { @class = "btn btn-primary" })

@@ -1,0 +1,52 @@
+﻿@model DAL.Moldels.Branch
+
+
+
+@using (Html.BeginForm("CreatePost", "Branch", FormMethod.Post))
+{
+    @Html.ValidationSummary(true);
+
+    <br />
+    <br />
+
+    <br />
+
+    <div class="row">
+        <div class="form-group, col-lg-4">
+            <label for="exampleInputPassword1">Branch</label>
+            @Html.EditorFor(m => m.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Branch Name" } })
+        </div>
+
+
+        <div class="form-group, col-lg-4">
+            <label for="exampleInputPassword2">Manager</label>
+            @Html.EditorFor(m => m.Manager, new { htmlAttributes = new { @class = "form-control", @placeholder = "Manager Name" } })
+        </div>
+
+
+    </div>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <hr />
+
+    <div style="text-align:center;">
+        <button type="submit" value="Submit" class="btn btn-primary">Add</button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+}

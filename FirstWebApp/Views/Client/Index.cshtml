@@ -1,0 +1,47 @@
+﻿@model List<DAL.Moldels.Client>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+
+            <tr>
+                <td>
+                    @client.Name
+                </td>
+                <td>
+                    @client.Adresss
+                </td>
+
+
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Client", new { @clientId = client.Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", "Client", new { @clientId = client.Id }, new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+<br />
+
+
+@Html.ActionLink("Add Client", "Create", "Client", new { @class = "btn btn-primary" })
+
+
+
